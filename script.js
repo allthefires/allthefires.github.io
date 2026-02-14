@@ -95,7 +95,9 @@ class Starfield {
                 radius: Math.random() * 1 + 0.5,
                 opacity: Math.random(),
                 twinkleSpeed: Math.random() * 0.01 + 0.003,
-                twinkleDirection: Math.random() > 0.5 ? 1 : -1
+                twinkleDirection: Math.random() > 0.5 ? 1 : -1,
+               vx: Math.random() * 0.2 - 0.1,
+vy: Math.random() * 0.2 - 0.1
             });
         }
     }
@@ -140,6 +142,15 @@ class Starfield {
         this.stars.forEach(star => {
             // Update twinkle
             star.opacity += star.twinkleSpeed * star.twinkleDirection;
+           // Update position
+star.x += star.vx;
+star.y += star.vy;
+
+// Wrap around edges
+if (star.x < 0) star.x = this.canvas.width;
+if (star.x > this.canvas.width) star.x = 0;
+if (star.y < 0) star.y = this.canvas.height;
+if (star.y > this.canvas.height) star.y = 0;
             
             // Reverse direction at boundaries
             if (star.opacity >= 1 || star.opacity <= 0.1) {
