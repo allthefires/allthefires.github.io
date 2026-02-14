@@ -93,7 +93,7 @@ class Starfield {
                 y: Math.random() * this.canvas.height,
                 radius: Math.random() * 1.5 + 0.5,
                 opacity: Math.random(),
-                twinkleSpeed: Math.random() * 0.02 + 0.005,
+                twinkleSpeed: Math.random() * 0.01 + 0.003,
                 twinkleDirection: Math.random() > 0.5 ? 1 : -1
             });
         }
