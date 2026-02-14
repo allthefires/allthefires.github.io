@@ -92,7 +92,7 @@ class Starfield {
             this.stars.push({
                 x: Math.random() * this.canvas.width,
                 y: Math.random() * this.canvas.height,
-                radius: Math.random() * 1.2 + 0.5,
+                radius: Math.random() * 1 + 0.5,
                 opacity: Math.random(),
                 twinkleSpeed: Math.random() * 0.01 + 0.003,
                 twinkleDirection: Math.random() > 0.5 ? 1 : -1
