@@ -62,7 +62,7 @@ document.addEventListener('selectstart', function(e) {
 });
 
 /* ========================================
-   STARFIELD ANIMATION
+   STARFIELD ANIMATION WITH CONSTELLATION LINES
 ======================================== */
 class Starfield {
     constructor() {
@@ -72,6 +72,7 @@ class Starfield {
         this.ctx = this.canvas.getContext('2d');
         this.stars = [];
         this.numStars = 200; // Adjust for more/fewer stars
+        this.connectionDistance = 150; // Maximum distance to draw lines between stars
         
         this.resize();
         this.createStars();
@@ -93,15 +94,49 @@ class Starfield {
                 y: Math.random() * this.canvas.height,
                 radius: Math.random() * 1.5 + 0.5,
                 opacity: Math.random(),
-                twinkleSpeed: Math.random() * 0.01 + 0.003,
+                twinkleSpeed: Math.random() * 0.01 + 0.002,
                 twinkleDirection: Math.random() > 0.5 ? 1 : -1
             });
+        }
+    }
+    
+    drawConnections() {
+        // Draw lines between nearby stars
+        for (let i = 0; i < this.stars.length; i++) {
+            for (let j = i + 1; j < this.stars.length; j++) {
+                const star1 = this.stars[i];
+                const star2 = this.stars[j];
+                
+                const dx = star1.x - star2.x;
+                const dy = star1.y - star2.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < this.connectionDistance) {
+                    // Calculate opacity based on distance (closer = more opaque)
+                    const lineOpacity = (1 - distance / this.connectionDistance) * 0.3;
+                    
+                    // Use average opacity of both stars
+                    const avgStarOpacity = (star1.opacity + star2.opacity) / 2;
+                    const finalOpacity = lineOpacity * avgStarOpacity;
+                    
+                    this.ctx.beginPath();
+                    this.ctx.moveTo(star1.x, star1.y);
+                    this.ctx.lineTo(star2.x, star2.y);
+                    this.ctx.strokeStyle = `rgba(255, 255, 255, ${finalOpacity})`;
+                    this.ctx.lineWidth = 0.5;
+                    this.ctx.stroke();
+                }
+            }
         }
     }
     
     drawStars() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         
+        // Draw connections first (so stars appear on top)
+        this.drawConnections();
+        
+        // Draw stars
         this.stars.forEach(star => {
             // Update twinkle
             star.opacity += star.twinkleSpeed * star.twinkleDirection;
@@ -129,7 +164,6 @@ class Starfield {
 document.addEventListener('DOMContentLoaded', function() {
     new Starfield();
 });
-
 /* ========================================
    NAVBAR SCROLL EFFECT (Optional Enhancement)
 ======================================== */
