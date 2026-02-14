@@ -71,7 +71,7 @@ class Starfield {
         
         this.ctx = this.canvas.getContext('2d');
         this.stars = [];
-        this.numStars = 250; // Adjust for more/fewer stars
+        this.numStars = 300; // Adjust for more/fewer stars
         this.connectionDistance = 125; // Maximum distance to draw lines between stars
         
         this.resize();
