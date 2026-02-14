@@ -72,7 +72,7 @@ class Starfield {
         this.ctx = this.canvas.getContext('2d');
         this.stars = [];
         this.numStars = 300; // Adjust for more/fewer stars
-        this.connectionDistance = 125; // Maximum distance to draw lines between stars
+        this.connectionDistance = 135; // Maximum distance to draw lines between stars
         
         this.resize();
         this.createStars();
@@ -94,7 +94,7 @@ class Starfield {
                 y: Math.random() * this.canvas.height,
                 radius: Math.random() * 1 + 0.5,
                 opacity: Math.random(),
-                twinkleSpeed: Math.random() * 0.01 + 0.003,
+                twinkleSpeed: Math.random() * 0.02 + 0.009,
                 twinkleDirection: Math.random() > 0.5 ? 1 : -1,
                vx: Math.random() * 0.2 - 0.1,
 vy: Math.random() * 0.2 - 0.1
@@ -124,7 +124,7 @@ vy: Math.random() * 0.2 - 0.1
                     this.ctx.beginPath();
                     this.ctx.moveTo(star1.x, star1.y);
                     this.ctx.lineTo(star2.x, star2.y);
-                    this.ctx.strokeStyle = `rgba(212, 242, 232, ${finalOpacity})`;
+                    this.ctx.strokeStyle = `rgba(240, 240, 240, ${finalOpacity})`;
                     this.ctx.lineWidth = 0.5;
                     this.ctx.stroke();
                 }
@@ -160,7 +160,7 @@ if (star.y > this.canvas.height) star.y = 0;
             // Draw star
             this.ctx.beginPath();
             this.ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-            this.ctx.fillStyle = `rgba(220, 220, 220, ${star.opacity})`;
+            this.ctx.fillStyle = `rgba(240, 240, 240, ${star.opacity})`;
             this.ctx.fill();
         });
     }
