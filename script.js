@@ -149,7 +149,7 @@ class Starfield {
             // Draw star
             this.ctx.beginPath();
             this.ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-            this.ctx.fillStyle = `rgba(0, 0, 0, ${star.opacity})`;
+            this.ctx.fillStyle = `rgba(200, 200, 200, ${star.opacity})`;
             this.ctx.fill();
         });
     }
