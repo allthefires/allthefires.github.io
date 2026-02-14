@@ -160,13 +160,16 @@ header {
     line-height: 1;
 }
 .hero-subtitle {
-    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    font-size: clamp(0.7rem, 1.5vw, 1.2rem);
     font-weight: 300;
-    letter-spacing: 18px;
+    letter-spacing: 15px;
     color: var(--color-text-muted);
     margin-top: 2rem;
     opacity: 0.8;
-    animation: fadeInUp 2.2s ease-out 0.5s backwards;
+    animation: fadeInUp 1.8s ease-out 0.3s backwards;
+    max-width: 100%;
+    text-align: center;
+    padding: 0 1rem;
 }
 
 @keyframes fadeInUp {
@@ -239,11 +242,19 @@ header {
     .hero-title {
         font-size: clamp(2rem, 8vw, 4rem);
     }
+
    @media (max-width: 768px) {
     .hero-subtitle {
         letter-spacing: 8px;
     }
 }
+
+@media (max-width: 480px) {
+    .hero-subtitle {
+        letter-spacing: 5px;
+    }
+}
+   
     
     .content-section {
         padding: 4rem 1.5rem;
