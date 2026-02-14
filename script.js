@@ -62,20 +62,73 @@ document.addEventListener('selectstart', function(e) {
 });
 
 /* ========================================
-   VIDEO OPTIMIZATION
+   STARFIELD ANIMATION
 ======================================== */
-// Ensure video plays on mobile devices
-const video = document.querySelector('.video-background video');
-if (video) {
-    video.addEventListener('loadedmetadata', function() {
-        this.play().catch(function(error) {
-            console.log('Video autoplay prevented:', error);
-        });
-    });
+class Starfield {
+    constructor() {
+        this.canvas = document.getElementById('starfield');
+        if (!this.canvas) return;
+        
+        this.ctx = this.canvas.getContext('2d');
+        this.stars = [];
+        this.numStars = 200; // Adjust for more/fewer stars
+        
+        this.resize();
+        this.createStars();
+        this.animate();
+        
+        window.addEventListener('resize', () => this.resize());
+    }
     
-    // Reduce playback rate for smoother performance (optional)
-    video.playbackRate = 0.8;
+    resize() {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+    }
+    
+    createStars() {
+        this.stars = [];
+        for (let i = 0; i < this.numStars; i++) {
+            this.stars.push({
+                x: Math.random() * this.canvas.width,
+                y: Math.random() * this.canvas.height,
+                radius: Math.random() * 1.5 + 0.5,
+                opacity: Math.random(),
+                twinkleSpeed: Math.random() * 0.02 + 0.005,
+                twinkleDirection: Math.random() > 0.5 ? 1 : -1
+            });
+        }
+    }
+    
+    drawStars() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        
+        this.stars.forEach(star => {
+            // Update twinkle
+            star.opacity += star.twinkleSpeed * star.twinkleDirection;
+            
+            // Reverse direction at boundaries
+            if (star.opacity >= 1 || star.opacity <= 0.1) {
+                star.twinkleDirection *= -1;
+            }
+            
+            // Draw star
+            this.ctx.beginPath();
+            this.ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+            this.ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+            this.ctx.fill();
+        });
+    }
+    
+    animate() {
+        this.drawStars();
+        requestAnimationFrame(() => this.animate());
+    }
 }
+
+// Initialize starfield when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    new Starfield();
+});
 
 /* ========================================
    NAVBAR SCROLL EFFECT (Optional Enhancement)
