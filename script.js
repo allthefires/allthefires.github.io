@@ -71,7 +71,7 @@ class Starfield {
         
         this.ctx = this.canvas.getContext('2d');
         this.stars = [];
-        this.numStars = 200; // Adjust for more/fewer stars
+        this.numStars = 250; // Adjust for more/fewer stars
         this.connectionDistance = 175; // Maximum distance to draw lines between stars
         
         this.resize();
@@ -122,7 +122,7 @@ class Starfield {
                     this.ctx.beginPath();
                     this.ctx.moveTo(star1.x, star1.y);
                     this.ctx.lineTo(star2.x, star2.y);
-                    this.ctx.strokeStyle = `rgba(255, 255, 255, ${finalOpacity})`;
+                    this.ctx.strokeStyle = `rgba(247, 247, 247, ${finalOpacity})`;
                     this.ctx.lineWidth = 0.5;
                     this.ctx.stroke();
                 }
@@ -149,7 +149,7 @@ class Starfield {
             // Draw star
             this.ctx.beginPath();
             this.ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-            this.ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+            this.ctx.fillStyle = `rgba(247, 247, 247, ${star.opacity})`;
             this.ctx.fill();
         });
     }
