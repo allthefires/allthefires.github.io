@@ -92,9 +92,9 @@ class Starfield {
             this.stars.push({
                 x: Math.random() * this.canvas.width,
                 y: Math.random() * this.canvas.height,
-                radius: Math.random() * 1.5 + 0.5,
+                radius: Math.random() * 1.2 + 0.5,
                 opacity: Math.random(),
-                twinkleSpeed: Math.random() * 0.01 + 0.002,
+                twinkleSpeed: Math.random() * 0.01 + 0.003,
                 twinkleDirection: Math.random() > 0.5 ? 1 : -1
             });
         }
@@ -149,7 +149,7 @@ class Starfield {
             // Draw star
             this.ctx.beginPath();
             this.ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-            this.ctx.fillStyle = `rgba(200, 200, 200, ${star.opacity})`;
+            this.ctx.fillStyle = `rgba(220, 220, 220, ${star.opacity})`;
             this.ctx.fill();
         });
     }
