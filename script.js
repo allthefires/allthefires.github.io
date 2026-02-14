@@ -73,6 +73,11 @@ class Starfield {
         this.stars = [];
         this.numStars = 300; // Adjust for more/fewer stars
         this.connectionDistance = 135; // Maximum distance to draw lines between stars
+       // Adjust for mobile
+if (window.innerWidth < 768) {
+    this.numStars = 80; // Menos estrellas en mobile
+    this.connectionDistance = 100; // Menos líneas
+}
         
         this.resize();
         this.createStars();
