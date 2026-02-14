@@ -122,7 +122,7 @@ class Starfield {
                     this.ctx.beginPath();
                     this.ctx.moveTo(star1.x, star1.y);
                     this.ctx.lineTo(star2.x, star2.y);
-                    this.ctx.strokeStyle = `rgba(235, 235, 235, ${finalOpacity})`;
+                    this.ctx.strokeStyle = `rgba(215, 215, 215, ${finalOpacity})`;
                     this.ctx.lineWidth = 0.5;
                     this.ctx.stroke();
                 }
@@ -149,7 +149,7 @@ class Starfield {
             // Draw star
             this.ctx.beginPath();
             this.ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-            this.ctx.fillStyle = `rgba(235, 235, 235, ${star.opacity})`;
+            this.ctx.fillStyle = `rgba(215, 215, 215, ${star.opacity})`;
             this.ctx.fill();
         });
     }
