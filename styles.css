@@ -218,9 +218,9 @@ header {
 
 .site-footer p {
     margin: 0;
-    font-size: 0.9rem;
-    color: var(--color-text-muted);
-    letter-spacing: 1px;
+    font-size: 0.7rem;
+    color: gray;
+    letter-spacing: 2px;
 }
 
 /* ========================================
