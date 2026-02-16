@@ -209,12 +209,6 @@ header {
 /* ========================================
    FOOTER
 ======================================== */
-.sitbackground: rgba(0, 0, 0, 0.3);
-    background-color: transparent !important;
-    background: transparent !important;
-    border: none !important;
-    padding: 0.6rem 0;
-}
 
 .site-footer p {
     margin: 0;
