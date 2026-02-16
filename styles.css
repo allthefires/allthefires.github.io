@@ -209,11 +209,11 @@ header {
 /* ========================================
    FOOTER
 ======================================== */
-.site-footer {
-    background: transparent;
-       /*before: background: rgba(10, 10, 10, 0.95); */
-    padding: 0.8rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+.sitbackground: rgba(0, 0, 0, 0.3);
+    background-color: transparent !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0.6rem 0;
 }
 
 .site-footer p {
