@@ -169,6 +169,20 @@ header {
     line-height: 1.2;
 }
 
+.hero-subtitle {
+    font-size: clamp(0.7rem, 1.5vw, 1.2rem);
+    font-weight: 300;
+    letter-spacing: 15px;
+    color: var(--color-text-muted);
+    margin-top: 2rem;
+    opacity: 0.8;
+    animation: fadeInUp 1.8s ease-out 0.3s backwards;
+    max-width: 100%;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
