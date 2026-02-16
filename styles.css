@@ -219,7 +219,7 @@ header {
 .site-footer p {
     margin: 0;
     font-size: 0.7rem;
-    color: red;
+    color: red important!;
     letter-spacing: 3px;
 }
 
