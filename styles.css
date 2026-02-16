@@ -245,7 +245,7 @@ header {
 
    @media (max-width: 768px) {
     .hero-subtitle {
-        letter-spacing: 8px;
+        letter-spacing: 2px;
     }
 }
 
