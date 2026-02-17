@@ -211,7 +211,7 @@ header {
 ======================================== */
 
 .site-footer p {
-    margin-top: -20px;
+    margin-top: 20px;
     font-size: 0.7rem;
     color: silver !important;
     letter-spacing: 4px;
