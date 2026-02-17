@@ -253,9 +253,9 @@ z-index: 20;
 
 .site-footer p {
     margin-bottom: 20px;
-    font-size: 0.8rem;
-    color: red !important;
-    letter-spacing: 4px;
+    font-size: 0.9rem;
+    color: pink !important;
+    letter-spacing: 5px;
 }
 
 /* ========================================
@@ -304,6 +304,7 @@ z-index: 20;
 
    @media (max-width: 768px) {
     .hero-subtitle {
+       font-size:0.7rem;
         letter-spacing: 2px;
        
     }
@@ -311,7 +312,7 @@ z-index: 20;
 
 @media (max-width: 480px) {
     .hero-subtitle {
-       font-size:0.4rem;
+       font-size:0.7rem;
         letter-spacing: 2px;
     }
 }
