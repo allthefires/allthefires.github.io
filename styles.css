@@ -252,9 +252,9 @@ z-index: 20;
    
 
 .site-footer p {
-    margin-bottom: 20px;
-    font-size: 0.9rem;
-    color: pink !important;
+    margin-bottom: 17px;
+    font-size: 0.75rem;
+    color: gray !important;
     letter-spacing: 5px;
 }
 
@@ -297,6 +297,8 @@ z-index: 20;
 }
 
 @media (max-width: 768px) {
+
+  
     .hero-title {
         font-size: clamp(2rem, 8vw, 4rem);
        line-height: 0.35;
@@ -312,9 +314,16 @@ z-index: 20;
 
 @media (max-width: 480px) {
     .hero-subtitle {
-       font-size:0.7rem;
-        letter-spacing: 2px;
+       font-size:0.75rem;
+        letter-spacing: 3px;
     }
+
+    .site-footer p {
+    margin-bottom: 17px;
+    font-size: 0.75rem;
+    color: gray !important;
+    letter-spacing: 4px;
+}
 }
    
     
