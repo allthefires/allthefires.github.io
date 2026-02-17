@@ -214,6 +214,30 @@ header {
 }
 
 /* ========================================
+   HERO NAVIGATION
+======================================== */
+.hero-nav {
+    display: none; /* Oculto en desktop */
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 3rem;
+    z-index: 10;
+}
+
+.hero-nav-link {
+    color: var(--color-text);
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hero-nav-link:hover {
+    color: var(--color-accent);
+}
+
+/* ========================================
    FOOTER
 ======================================== */
 
@@ -248,6 +272,29 @@ z-index: 20;
     .navbar-nav .nav-link::after {
         display: none;
     }
+   @media (max-width: 991px) {
+    /* Ocultar header completo en mobile */
+    header {
+        display: none;
+    }
+    
+    /* Mostrar navegación en hero para mobile */
+    .hero-nav {
+        display: flex;
+    }
+    
+    /* El resto de estilos que ya tienes... */
+    .navbar-collapse {
+        background: rgba(10, 10, 10, 0.98);
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 8px;
+    }
+    
+    .navbar-nav .nav-link::after {
+        display: none;
+    }
+}
 }
 
 @media (max-width: 768px) {
