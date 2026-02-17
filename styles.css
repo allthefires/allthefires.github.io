@@ -254,8 +254,8 @@ z-index: 20;
 .site-footer p {
     margin-bottom: 17px;
     font-size: 0.75rem;
-    color: pink !important;
-    letter-spacing: 4px;
+    color: silver !important;
+    letter-spacing: 3px;
 }
 
 /* ========================================
@@ -293,20 +293,18 @@ z-index: 20;
     }
 
     .hero-subtitle {
-       font-size:0.80rem;
-        letter-spacing: 1px;
+       font-size:0.85rem;
+        letter-spacing: 2px;
        
     }
+   .site-footer p {
+    margin-bottom: 17px;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
 }
 
 @media (max-width: 480px) {
-    .hero-subtitle {
-       font-size:0.80rem;
-        letter-spacing: 1px;
-    }
-
-}
-    
     .content-section {
         padding: 4rem 1.5rem;
     }
