@@ -254,8 +254,8 @@ z-index: 20;
 .site-footer p {
     margin-bottom: 17px;
     font-size: 0.75rem;
-    color: orange !important;
-    letter-spacing: 5px;
+    color: pink !important;
+    letter-spacing: 4px;
 }
 
 /* ========================================
@@ -288,12 +288,12 @@ z-index: 20;
 @media (max-width: 768px) {
 
     .hero-title {
-        font-size: clamp(2.2rem, 9vw, 4.5rem);
-       line-height: 0.35;
+        font-size: clamp(2.5rem, 9vw, 5rem);
+       line-height: 0.30;
     }
 
     .hero-subtitle {
-       font-size:0.75rem;
+       font-size:0.80rem;
         letter-spacing: 1px;
        
     }
@@ -301,18 +301,11 @@ z-index: 20;
 
 @media (max-width: 480px) {
     .hero-subtitle {
-       font-size:0.75rem;
-        letter-spacing: 2px;
+       font-size:0.80rem;
+        letter-spacing: 1px;
     }
 
-    .site-footer p {
-    margin-bottom: 17px;
-    font-size: 0.70rem;
-    color: silver !important;
-    letter-spacing: 3px;
 }
-}
-   
     
     .content-section {
         padding: 4rem 1.5rem;
