@@ -212,11 +212,16 @@ header {
 
 .site-footer{
    background: transparent;
+   position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+z-index: 20;
 }
    
 
 .site-footer p {
-    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 0.7rem;
     color: yellow !important;
     letter-spacing: 4px;
