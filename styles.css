@@ -157,7 +157,7 @@ header {
     color: var(--color-accent);
     text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
     animation: fadeInUp 1.8s ease-out;
-    line-height: 0;
+    line-height: 0.5;
 }
 .hero-subtitle {
     font-size: clamp(0.7rem, 1.5vw, 1.2rem);
@@ -211,8 +211,8 @@ header {
 ======================================== */
 
 .site-footer p {
-    margin: 0;
-    font-size: 0.6rem;
+    margin-top: -20px;
+    font-size: 0.7rem;
     color: silver !important;
     letter-spacing: 4px;
 }
