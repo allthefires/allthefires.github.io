@@ -254,7 +254,7 @@ z-index: 20;
 .site-footer p {
     margin-bottom: 17px;
     font-size: 0.75rem;
-    color: darkgray !important;
+    color: red !important;
     letter-spacing: 3px;
 }
 
@@ -289,13 +289,12 @@ z-index: 20;
 
     .hero-title {
         font-size: clamp(2.5rem, 9vw, 5rem);
-       line-height: 0;
     }
 
     .hero-subtitle {
        font-size:0.93rem;
         letter-spacing: 2px;
-       margin-top: 15px;
+       margin-top: 2.5rem;
     }
    .site-footer p {
     margin-bottom: 17px;
