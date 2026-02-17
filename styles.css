@@ -295,7 +295,7 @@ z-index: 20;
     .hero-subtitle {
        font-size:0.90rem;
         letter-spacing: 2px;
-       
+       margin-top: 15px;
     }
    .site-footer p {
     margin-bottom: 17px;
