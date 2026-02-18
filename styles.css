@@ -287,20 +287,7 @@ z-index: 20;
    
 .hero-nav-link {
     font-size: 0.95rem;
-    background: linear-gradient(90deg, #696969, #ffffff, #696969);
-    background-size: 200% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 6s infinite;
-}
-
-@keyframes shimmer {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-}
-
-  
+  color: #696969;
 }
 
 @media (max-width: 768px) {
