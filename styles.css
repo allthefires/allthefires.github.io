@@ -292,7 +292,7 @@ z-index: 20;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shimmer 3s infinite;
+    animation: shimmer 6s infinite;
 }
 
 @keyframes shimmer {
