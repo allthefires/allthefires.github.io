@@ -282,9 +282,12 @@ z-index: 20;
     /* Mostrar navegación en hero para mobile */
     .hero-nav {
         display: flex;
-       margin-top:3rem;
-       color:red;
+       margin-top:4rem;
     }
+
+   .nav-link{
+      color:red;
+   }
   
 }
 
