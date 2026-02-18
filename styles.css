@@ -167,34 +167,29 @@ header {
     animation: fadeInUp 1.8s ease-out;
     line-height: 0.75;
 }
-
-font-size: clamp(0.7rem, 1.65vw, 1.2rem);
+.hero-subtitle {
+    font-size: clamp(0.7rem, 1.65vw, 1.2rem);
     font-weight: 300;
     letter-spacing: 15px;
+    color: #A9A9A9;
     margin-top: 2rem;
     opacity: 0.8;
-    animation: fadeInUp 1.8s ease-out 0.3s backwards, subtitleGlow 5s ease-in-out infinite;
+    animation: fadeInUp 1.8s ease-out 0.3s backwards;
     max-width: 100%;
     text-align: center;
     padding: 0 1rem;
-    background: linear-gradient(90deg, 
-        transparent, 
-        transparent, 
-        rgba(255, 255, 255, 0.4), 
-        transparent, 
-        transparent
-    );
-    background-size: 200% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: #A9A9A9;
 }
 
-@keyframes subtitleGlow {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-
 
 /* ========================================
    CONTENT SECTIONS
@@ -278,6 +273,7 @@ z-index: 20;
     .navbar-nav .nav-link::after {
         display: none;
     }
+   
 
     /* Ocultar header completo en mobile */
     header {
@@ -287,12 +283,12 @@ z-index: 20;
     /* Mostrar navegación en hero para mobile */
     .hero-nav {
         display: flex;
-       padding-top:4rem;
+       padding-top:3rem;
     }
    
-.hero-nav-link {
-    font-size: 0.95rem;
-  color: silver;
+  .hero-nav-link{
+     color:darkgray;
+     font-size:1rem;
 }
 
 @media (max-width: 768px) {
