@@ -162,7 +162,7 @@ header {
     font-weight: 700;
     letter-spacing: 2px;
     /*color: var(--color-accent);*/
-   color: silver;
+   color: gainsboro;
     text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
     animation: fadeInUp 1.8s ease-out;
     line-height: 0.75;
