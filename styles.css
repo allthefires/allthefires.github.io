@@ -171,7 +171,7 @@ header {
     font-size: clamp(0.7rem, 1.65vw, 1.2rem);
     font-weight: 300;
     letter-spacing: 15px;
-    color: white;
+    color: #A9A9A9;
     margin-top: 2rem;
     opacity: 0.8;
     animation: fadeInUp 1.8s ease-out 0.3s backwards;
