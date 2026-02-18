@@ -282,6 +282,7 @@ z-index: 20;
     /* Mostrar navegación en hero para mobile */
     .hero-nav {
         display: flex;
+       margin-top:2rem;
     }
   
 }
