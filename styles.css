@@ -174,26 +174,20 @@ header {
     letter-spacing: 15px;
     margin-top: 2rem;
     opacity: 0.8;
-    animation: fadeInUp 2s ease-out 0.4s backwards, subtitleGlow 5s ease-in-out infinite;
+    animation: fadeInUp 1.8s ease-out 0.3s backwards, subtitleGlow 5s ease-in-out infinite;
     max-width: 100%;
     text-align: center;
     padding: 0 1rem;
-    background: linear-gradient(90deg, 
-        transparent, 
-        transparent, 
-        rgba(255, 255, 255, 0.4), 
-        transparent, 
-        transparent
-    );
-    background-size: 200% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
     color: #A9A9A9;
 }
 
 @keyframes subtitleGlow {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
+    0%, 100% { 
+        text-shadow: 0 0 0px rgba(255, 255, 255, 0);
+    }
+    50% { 
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+    }
 }
 
 /* ========================================
@@ -292,7 +286,7 @@ z-index: 20;
    
 .hero-nav-link {
     font-size: 0.95rem;
-  color: #696969;
+  color: silver;
 }
 
 @media (max-width: 768px) {
