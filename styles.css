@@ -301,9 +301,10 @@ z-index: 20;
     }
    
    .site-footer p {
-    margin-bottom: 17px;
+    margin-bottom: 30px;
     font-size: 0.7rem;
     letter-spacing: 2px;
+      color:pink;
 }
 }
 
