@@ -184,10 +184,12 @@ header {
     from {
         opacity: 0;
         transform: translateY(30px);
+        color: #A9A9A9; /* darkgray */
     }
     to {
         opacity: 1;
         transform: translateY(0);
+        color: #A9A9A9; /* darkgray */
     }
 }
 
@@ -256,7 +258,7 @@ z-index: 20;
 .site-footer p {
     margin-bottom: 10px;
     font-size: 0.75rem;
-    color: white !important; /*darkgray #A9A9A9*  gray #808080*/
+    color: red !important; /*darkgray #A9A9A9*  gray #808080*/
     letter-spacing: 4px;
 }
 
@@ -317,12 +319,12 @@ z-index: 20;
     }
    
     .site-footer {
-        bottom: 30px; 
+        padding-bottom: 40px; 
     }
    
     .site-footer p {
-        margin-bottom: 0; 
-        padding-bottom: 0; 
+                padding-bottom: 40px; 
+
         font-size: 0.7rem;
         letter-spacing: 2px;
     }
