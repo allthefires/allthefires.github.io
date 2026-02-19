@@ -49,12 +49,18 @@ body {
 ======================================== */
 header {
     height: var(--header-height);
+    background: transparent;
+    z-index: 1000;
+}
+/*Original black background ---------
+header {
+    height: var(--header-height);
     background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
+}*/
 
 .navbar {
     height: var(--header-height);
@@ -255,7 +261,7 @@ z-index: 20;
 .site-footer p {
     margin-bottom: 16px;
     font-size: 0.75rem;
-    color: #A9A9A9 !important;
+    color: red !important; /*darkgray #A9A9A9*/
     letter-spacing: 3px;
 }
 
