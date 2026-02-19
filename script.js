@@ -219,8 +219,8 @@ document.addEventListener('DOMContentLoaded', function() {
             element.style.transform = `translateY(${position}px)`;
             
             const interval = setInterval(() => {
-                opacity += 0.01; // Incremento muy pequeño = más suave
-                position -= 0.3;
+                opacity += 0.04; // Más grande = más rápido, más pequeño = más lento
+                position -= 0.3;// Más grande = más rápido
                 
                 element.style.opacity = opacity;
                 element.style.transform = `translateY(${position}px)`;
@@ -230,10 +230,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     element.style.opacity = 1;
                     element.style.transform = 'translateY(0)';
                 }
-            }, 20); // 20ms entre cada paso = ultra smooth
+            }, 20); // Más pequeño = más rápido, más grande = más lento
         }, delay);
     }
     
     if (title) smoothFadeIn(title, 0);
     if (subtitle) smoothFadeIn(subtitle, 300);
 });
+
