@@ -174,8 +174,7 @@ header {
     letter-spacing: 15px;
     margin-top: 2rem;
     opacity: 0.8;
-    animation: fadeInUp 1.8s ease-out 0.3s backwards, 
-               
+    animation: fadeInUp 1.8s ease-out 0.5s backwards;  
     max-width: 100%;
     text-align: center;
     padding: 0 1rem;
@@ -257,7 +256,7 @@ z-index: 20;
 .site-footer p {
     margin-bottom: 10px;
     font-size: 0.75rem;
-    color: yellow !important; /*darkgray #A9A9A9*  gray #808080*/
+    color: white !important; /*darkgray #A9A9A9*  gray #808080*/
     letter-spacing: 4px;
 }
 
