@@ -318,6 +318,7 @@ z-index: 20;
    
    .site-footer p {
     margin-bottom: 30px;
+      padding-bottom:30px;
     font-size: 0.7rem;
     letter-spacing: 2px;
 }
