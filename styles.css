@@ -165,7 +165,7 @@ header {
     /*color: var(--color-accent);*/
    color: #DCDCDC;  /*gainsboro*/
     text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
-    animation: fadeInUp 1.8s ease-out;
+    animation: fadeInUp 1.8s ease-in-out;
     line-height: 0.65;
 }
 .hero-subtitle {
@@ -174,7 +174,7 @@ header {
     letter-spacing: 15px;
     margin-top: 2rem;
     opacity: 0.8;
-    animation: fadeInUp 1.8s ease-out 0.5s backwards;  
+    animation: fadeInUp 1.8s ease-in-out 0.5s backwards;  
     max-width: 100%;
     text-align: center;
     padding: 0 1rem;
@@ -258,7 +258,7 @@ z-index: 20;
 .site-footer p {
     margin-bottom: 10px;
     font-size: 0.75rem;
-    color: red !important; /*darkgray #A9A9A9*  gray #808080*/
+    color: #808080 !important; /*darkgray #A9A9A9*  gray #808080*/
     letter-spacing: 4px;
 }
 
@@ -308,8 +308,8 @@ z-index: 20;
 }
 @media (max-width: 768px) {
     .hero-title {
-        font-size: clamp(2.5rem, 9vw, 5rem);
-        line-height: 0.5;
+        /*font-size: clamp(2.5rem, 9vw, 5rem);*/
+        line-height: 0.75;
     }
 
     .hero-subtitle {
@@ -319,11 +319,11 @@ z-index: 20;
     }
    
     .site-footer {
-        padding-bottom: 40px; 
+        padding-bottom: 30px; 
     }
    
     .site-footer p {
-                padding-bottom: 40px; 
+                padding-bottom: 30px; 
 
         font-size: 0.7rem;
         letter-spacing: 2px;
