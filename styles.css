@@ -171,7 +171,7 @@ header {
    color: gainsboro;
     text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
     animation: fadeInUp 1.8s ease-out;
-    line-height: 0.75;
+    line-height: 0.5;
 }
 .hero-subtitle {
     font-size: clamp(0.7rem, 1.65vw, 1.2rem);
@@ -261,7 +261,7 @@ z-index: 20;
 .site-footer p {
     margin-bottom: 10px;
     font-size: 0.75rem;
-    color: green !important; /*darkgray #A9A9A9*/
+    color: gray !important; /*darkgray #A9A9A9*/
     letter-spacing: 3px;
 }
 
