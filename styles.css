@@ -255,7 +255,7 @@ z-index: 20;
 .site-footer p {
     margin-bottom: 10px;
     font-size: 0.75rem;
-    color: gray !important; /*darkgray #A9A9A9*/
+    color: #808080 !important; /*darkgray #A9A9A9*  gray #808080/
     letter-spacing: 3px;
 }
 
@@ -307,7 +307,7 @@ z-index: 20;
 
     .hero-title {
         font-size: clamp(2.5rem, 9vw, 5rem);
-       line-height:0.25;
+       line-height:0.5;
     }
 
     .hero-subtitle {
@@ -320,7 +320,6 @@ z-index: 20;
     margin-bottom: 30px;
     font-size: 0.7rem;
     letter-spacing: 2px;
-      color:pink;
 }
 }
 
