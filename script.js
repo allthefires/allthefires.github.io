@@ -201,3 +201,39 @@ window.addEventListener('scroll', function() {
     
     lastScroll = currentScroll;
 });
+
+/* ========================================
+   FADE IN ULTRA SUAVE PARA TITULO Y SUBTITULO
+======================================== */
+// Fade in ultra suave para título y subtítulo
+document.addEventListener('DOMContentLoaded', function() {
+    const title = document.querySelector('.hero-title');
+    const subtitle = document.querySelector('.hero-subtitle');
+    
+    function smoothFadeIn(element, delay = 0) {
+        setTimeout(() => {
+            let opacity = 0;
+            let position = 30;
+            
+            element.style.opacity = 0;
+            element.style.transform = `translateY(${position}px)`;
+            
+            const interval = setInterval(() => {
+                opacity += 0.01; // Incremento muy pequeño = más suave
+                position -= 0.3;
+                
+                element.style.opacity = opacity;
+                element.style.transform = `translateY(${position}px)`;
+                
+                if (opacity >= 1) {
+                    clearInterval(interval);
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
+                }
+            }, 20); // 20ms entre cada paso = ultra smooth
+        }, delay);
+    }
+    
+    if (title) smoothFadeIn(title, 0);
+    if (subtitle) smoothFadeIn(subtitle, 300);
+});
