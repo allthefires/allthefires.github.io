@@ -219,8 +219,8 @@ document.addEventListener('DOMContentLoaded', function() {
             element.style.transform = `translateY(${position}px)`;
             
             const interval = setInterval(() => {
-                opacity += 0.01; // Incremento muy pequeño = más suave
-                position -= 0.3;
+                opacity += 0.005; // Incremento muy pequeño = más suave
+                position -= 0.15;
                 
                 element.style.opacity = opacity;
                 element.style.transform = `translateY(${position}px)`;
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     element.style.opacity = 1;
                     element.style.transform = 'translateY(0)';
                 }
-            }, 20); // 20ms entre cada paso = ultra smooth
+            }, 30); // 30ms entre cada paso = ultra smooth
         }, delay);
     }
     
