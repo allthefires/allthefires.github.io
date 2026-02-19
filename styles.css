@@ -175,7 +175,7 @@ header {
     margin-top: 2rem;
     opacity: 0.8;
     animation: fadeInUp 1.8s ease-out 0.3s backwards, 
-               subtitleGlow 5s ease-in-out 4s infinite; /* Cambié de 2s a 4s */
+               
     max-width: 100%;
     text-align: center;
     padding: 0 1rem;
@@ -192,14 +192,6 @@ header {
     }
 }
 
-@keyframes subtitleGlow {
-    0%, 100% { 
-        text-shadow: 0 0 0px rgba(255, 255, 255, 0);
-    }
-    50% { 
-        text-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
-    }
-}
 
 /* ========================================
    CONTENT SECTIONS
@@ -265,7 +257,7 @@ z-index: 20;
 .site-footer p {
     margin-bottom: 10px;
     font-size: 0.75rem;
-    color: green !important; /*darkgray #A9A9A9*  gray #808080*/
+    color: yellow !important; /*darkgray #A9A9A9*  gray #808080*/
     letter-spacing: 4px;
 }
 
