@@ -183,7 +183,7 @@ header {
     animation: fadeInUp 2s ease-out 0.4s backwards;
     max-width: 100%;
     text-align: center;
-    padding: 2 1rem;
+    padding: 4 1rem;
 }
 
 @keyframes fadeInUp {
@@ -259,9 +259,9 @@ z-index: 20;
    
 
 .site-footer p {
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     font-size: 0.75rem;
-    color: red !important; /*darkgray #A9A9A9*/
+    color: green !important; /*darkgray #A9A9A9*/
     letter-spacing: 3px;
 }
 
