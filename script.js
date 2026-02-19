@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
             element.style.transform = `translateY(${position}px)`;
             
             const interval = setInterval(() => {
-                opacity += 0.002; // Incremento muy pequeño = más suave
+                opacity += 0.01; // Incremento muy pequeño = más suave
                 position -= 0.3;
                 
                 element.style.opacity = opacity;
