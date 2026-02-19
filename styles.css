@@ -165,7 +165,7 @@ header {
     /*color: var(--color-accent);*/
    color: #DCDCDC;  /*gainsboro*/
     text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
-    animation: fadeInUp 1.8s ease-in-out;
+    animation: fadeInUp 2.2s cubic-bezier(0.22, 0.61, 0.36, 1);
     line-height: 0.65;
 }
 .hero-subtitle {
@@ -174,7 +174,7 @@ header {
     letter-spacing: 15px;
     margin-top: 2rem;
     opacity: 0.8;
-    animation: fadeInUp 1.8s ease-in-out 0.5s backwards;  
+    animation: fadeInUp 2.2s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s backwards;
     max-width: 100%;
     text-align: center;
     padding: 0 1rem;
