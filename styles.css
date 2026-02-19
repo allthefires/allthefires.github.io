@@ -265,8 +265,8 @@ z-index: 20;
 .site-footer p {
     margin-bottom: 10px;
     font-size: 0.75rem;
-    color: red !important; /*darkgray #A9A9A9*  gray #808080/
-    letter-spacing: 3px;
+    color: green !important; /*darkgray #A9A9A9*  gray #808080*/
+    letter-spacing: 4px;
 }
 
 /* ========================================
