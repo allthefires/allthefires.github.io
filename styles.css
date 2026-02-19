@@ -190,6 +190,25 @@ header {
     padding: 0 1rem;
     color: #A9A9A9;
 }
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subtitleGlow {
+    0%, 100% { 
+        text-shadow: 0 0 0px rgba(255, 255, 255, 0);
+    }
+    50% { 
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+    }
+}
 
 /* ========================================
    CONTENT SECTIONS
@@ -302,7 +321,7 @@ z-index: 20;
     color: #ffffff;
     z-index: 15;
 }
-
+}
 @media (max-width: 768px) {
 
     .hero-title {
