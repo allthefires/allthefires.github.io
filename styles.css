@@ -277,7 +277,6 @@ z-index: 20;
         display: none;
     }
    
-
     /* Ocultar header completo en mobile */
     header {
         display: none;
@@ -308,7 +307,7 @@ z-index: 20;
 }
 @media (max-width: 768px) {
     .hero-title {
-        /*font-size: clamp(2.5rem, 9vw, 5rem);*/
+        /*font-size: clamp(3.5rem, 9vw, 6rem);*/
         line-height: 0.75;
     }
 
