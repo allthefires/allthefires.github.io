@@ -84,8 +84,10 @@ if (window.innerWidth < 768) {
         this.createStars();
         this.animate();
         
-        window.addEventListener('resize', () => this.resize());
-    }
+window.addEventListener('resize', () => {
+    this.resize();
+    this.createStars(); // Regenera estrellas con nuevo tamaño
+});    }
     
     resize() {
         this.canvas.width = window.innerWidth;
