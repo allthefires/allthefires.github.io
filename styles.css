@@ -307,8 +307,8 @@ z-index: 20;
 }
 @media (max-width: 768px) {
     .hero-title {
-        /*font-size: clamp(3.5rem, 9vw, 6rem);*/
-        line-height: 0.75;
+        font-size: clamp(2rem, 9vw, 4rem);*/
+        line-height: 0.5;
     }
 
     .hero-subtitle {
