@@ -265,6 +265,10 @@ z-index: 20;
    RESPONSIVE ADJUSTMENTS
 ======================================== */
 @media (max-width: 991px) {
+   .hero-content {
+        justify-content: center; /* Centra verticalmente todo el contenido */
+        padding-top: 4rem; /* Baja un poco el contenido desde arriba */
+    }
     .navbar-collapse {
         background: rgba(10, 10, 10, 0.98);
         padding: 1rem;
