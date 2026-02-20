@@ -306,8 +306,8 @@ z-index: 20;
 }
 @media (max-width: 768px) {
     .hero-title {
-        font-size: clamp(2rem, 9vw, 4rem);
-        line-height: 0.5;
+        font-size: clamp(2.5rem, 9vw, 4.5rem);
+        line-height: 0.35;
     }
 
     .hero-subtitle {
