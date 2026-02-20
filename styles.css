@@ -306,7 +306,7 @@ z-index: 20;
 }
 @media (max-width: 768px) {
     .hero-title {
-        font-size: clamp(2rem, 9vw, 4rem);*/
+        font-size: clamp(2rem, 9vw, 4rem);
         line-height: 0.5;
     }
 
