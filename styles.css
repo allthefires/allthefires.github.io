@@ -299,7 +299,7 @@ z-index: 20;
         color: darkgray;
         font-size: 1rem;
         opacity: 0; 
-        animation: fadeIn 1.5s ease-in-out 1.5s forwards;  
+        animation: fadeIn 1.5s ease-in-out 0.9s forwards;  
     }
    .mobile-logo {
     display: block;
