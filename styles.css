@@ -183,12 +183,14 @@ header {
 }
 @keyframes fadeInUp {
     from {
-        
+        opacity: 0;
+        transform: translateY(30px);
         color: #A9A9A9; /* darkgray */
     }
     to {
-        opacity: 1;
+       opacity: 0.8; /* CAMBIA ESTE de 1 a 0.8 */
         transform: translateY(0);
+        opacity: 1;
         color: #A9A9A9; /* darkgray */
     }
 }
