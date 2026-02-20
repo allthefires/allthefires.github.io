@@ -318,6 +318,7 @@ z-index: 20;
     .hero-title {
         font-size: clamp(2.5rem, 9vw, 4.5rem);
         line-height: 0.35;
+       color:red;
     }
 
     .hero-subtitle {
