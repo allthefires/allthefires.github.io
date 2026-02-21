@@ -175,7 +175,7 @@ header {
 }
 
 .gallery-item:hover .gallery-image img {
-   transform: scale(1.3);
+   transform: scale(1.2);
     filter: saturate(1) contrast(1);
 }
 
