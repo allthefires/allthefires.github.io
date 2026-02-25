@@ -203,3 +203,20 @@ window.addEventListener("scroll", function () {
 
   lastScroll = currentScroll;
 });
+
+/* ========================================
+   VISUALS HTML -- IMAGE FADE-IN ON LOAD
+======================================== */
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll("img.fade-in");
+
+  images.forEach((img) => {
+    if (img.complete) {
+      img.classList.add("loaded");
+    } else {
+      img.addEventListener("load", function () {
+        img.classList.add("loaded");
+      });
+    }
+  });
+});
