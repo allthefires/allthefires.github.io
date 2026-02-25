@@ -95,22 +95,6 @@ header {
   width: calc(100% - 2.4rem);
 }
 
-/* Header específico para Visuals */
-.visuals-header {
-  background-color: #ffffff !important;
-  border-bottom: 1px solid #f0f0f0;
-  display: block !important;
-}
-
-.visuals-header .logo-text,
-.visuals-header .nav-link {
-  color: #000000 !important;
-}
-
-.visuals-header .nav-link::after {
-  background-color: #000;
-}
-
 /* ========================================
    INDEX - HERO & STARFIELD
 ======================================== */
@@ -180,41 +164,32 @@ header {
 }
 
 /* ========================================
-   VISUALS 
+   --------        VISUALS  ---------------
 ======================================== */
-/* Estado para página Visuals (Fondo Blanco) 
-body.bg-white-page {
+
+/* Header específico para Visuals */
+.visuals-header {
   background-color: #ffffff !important;
-  color: #000000 !important;
+  border-bottom: 1px solid #f0f0f0;
+  display: block !important;
 }
-*/
+
+.visuals-header .logo-text,
+.visuals-header .nav-link {
+  color: #4c4c4c !important;
+}
+
+.visuals-header .nav-link::after {
+  background-color: #000;
+}
+
 body.bg-white-page {
-  background: linear-gradient(
-    135deg,
-    #fce8d8,
-    #e2eafd,
-    #e2fce8,
-    #fce2f5,
-    #fcf8d8,
-    #d8f5fc
-  );
-  background-size: 400% 400%;
-  animation: gradientShift 14s ease infinite;
+  background-color: #ffffff;
   color: #000000 !important;
 }
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+
 .visuals-container {
-  padding: 160px 10% 120px 10%;
+  padding: 120px 10% 120px 10%;
   min-height: 100vh;
 }
 
@@ -224,7 +199,7 @@ body.bg-white-page {
 }
 
 .visuals-title {
-  font-weight: 800;
+  font-weight: 700;
   font-size: clamp(3.5rem, 9vw, 7rem);
   letter-spacing: 6px;
   line-height: 0.9;
@@ -240,7 +215,7 @@ body.bg-white-page {
 .visuals-subtitle {
   font-weight: 300;
   font-size: clamp(0.7rem, 1.2vw, 1.1rem);
-  letter-spacing: 1.4em;
+  letter-spacing: 1.24em;
   margin-right: -1.45em;
   color: #888 !important;
   text-transform: uppercase;
@@ -255,38 +230,54 @@ body.bg-white-page {
   position: relative;
   aspect-ratio: 4/5;
   overflow: hidden;
-  background: #000;
+  background: #ffffff;
+  transition: background 1.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .category-img-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 1.2s cubic-bezier(0.15, 0, 0.05, 1);
-  -webkit-user-drag: none;
-}
+  object-position: top;
+  /* estado base totalmente neutro */
+  filter: brightness(0.95) contrast(0.95) saturate(0.95);
 
-.category-overlay {
+  /* transición suave SOLO del filtro */
+  transition: filter 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+  will-change: filter;
+}
+.category-card:hover img {
+  filter: brightness(1.12) contrast(1.28) saturate(1.05);
+}
+/*.category-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.2);
   transition: opacity 0.6s ease;
+}*/
+.category-card:hover .category-img-wrapper {
+  background: #ffffff;
 }
 
 .category-name {
   position: absolute;
-  bottom: 1px;
+  top: 1px;
   left: 0;
   right: 0;
   text-align: center;
-  color: #c2c2c2 !important;
+  color: #f1f1f1 !important;
   font-weight: 700;
   letter-spacing: 2px;
   font-size: 2rem;
   text-transform: uppercase;
+}
+
+.cold-img {
+  object-position: 40% 50%; /*el 40% es para que se recorra la img de Urban a la izq y el 50 es de que se queda centrado por default, o sea arriba abajo*/
 }
 
 /* ========================================
@@ -441,7 +432,6 @@ body.bg-white-page {
     left: 0;
     right: 0;
     text-align: center;
-    color: #c2c2c2 !important;
     font-weight: 700;
     letter-spacing: 2px;
     font-size: 1.25rem;
