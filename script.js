@@ -208,9 +208,8 @@ window.addEventListener("scroll", function () {
    VISUALS HTML -- IMAGE FADE-IN ON LOAD
 ======================================== */
 document.addEventListener("DOMContentLoaded", function () {
-  const images = document.querySelectorAll("img.fade-img");
-
-  images.forEach((img) => {
+  // Fade-in para imágenes
+  document.querySelectorAll("img.fade-img").forEach((img) => {
     if (img.complete) {
       img.classList.add("loaded");
     } else {
@@ -218,5 +217,10 @@ document.addEventListener("DOMContentLoaded", function () {
         img.classList.add("loaded");
       });
     }
+  });
+
+  // Fade-in para nombres de categorías
+  document.querySelectorAll(".category-name").forEach((name) => {
+    name.classList.add("loaded");
   });
 });
