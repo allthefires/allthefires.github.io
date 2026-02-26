@@ -208,7 +208,7 @@ window.addEventListener("scroll", function () {
    VISUALS HTML -- IMAGE FADE-IN ON LOAD
 ======================================== */
 document.addEventListener("DOMContentLoaded", function () {
-  const images = document.querySelectorAll("img.fade-in");
+  const images = document.querySelectorAll("img.fade-img");
 
   images.forEach((img) => {
     if (img.complete) {

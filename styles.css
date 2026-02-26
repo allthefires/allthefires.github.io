@@ -279,12 +279,12 @@ body.bg-white-page {
 .cold-img {
   object-position: 40% 50%; /*el 40% es para que se recorra la img de Urban a la izq y el 50 es de que se queda centrado por default, o sea arriba abajo*/
 }
-.fade-in {
+.fade-img {
   opacity: 0;
   transition: opacity 0.6s ease;
 }
 
-.fade-in.loaded {
+.fade-img.loaded {
   opacity: 1;
 }
 
