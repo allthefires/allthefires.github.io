@@ -434,6 +434,7 @@ body.bg-white-page {
     font-weight: 600;
     letter-spacing: 4px;
     margin-bottom: 0; /* El espacio lo da la posición absoluta */
+    white-space: nowrap;
   }
 
   .navbar-collapse {
