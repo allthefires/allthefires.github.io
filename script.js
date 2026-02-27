@@ -207,36 +207,3 @@ window.addEventListener("scroll", function () {
 /* ========================================
    VISUALS HTML -- IMAGE FADE-IN ON LOAD
 ======================================== */
-function initFade() {
-  const imgs = document.querySelectorAll(".category-img-wrapper img");
-  const names = document.querySelectorAll(".category-name");
-
-  // 1. Forzar invisible SIN transición (instantáneo, aunque estén en caché)
-  imgs.forEach((img) => {
-    img.style.transition = "none";
-    img.style.opacity = "0";
-  });
-  names.forEach((el) => {
-    el.style.transition = "none";
-    el.style.opacity = "0";
-  });
-
-  // 2. Doble requestAnimationFrame = esperar que el browser pinte el estado invisible
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      // 3. Activar la transición suave hacia visible
-      imgs.forEach((img) => {
-        img.style.transition =
-          "opacity 2s ease, filter 1.8s cubic-bezier(0.19, 1, 0.22, 1)";
-        img.style.opacity = "1";
-      });
-      names.forEach((el) => {
-        el.style.transition = "opacity 2s ease";
-        el.style.opacity = "1";
-      });
-    });
-  });
-}
-
-// Funciona en carga normal, refresh, y botón atrás
-window.addEventListener("pageshow", initFade);

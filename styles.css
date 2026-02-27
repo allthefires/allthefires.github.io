@@ -176,7 +176,7 @@ header {
 
 .visuals-header .logo-text,
 .visuals-header .nav-link {
-  color: #4c4c4c !important;
+  color: #5a5a5a !important;
 }
 
 .visuals-header .nav-link::after {
@@ -250,15 +250,7 @@ body.bg-white-page {
 .category-card:hover img {
   filter: brightness(1.12) contrast(1.28) saturate(1.05);
 }
-/*.category-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  transition: opacity 0.6s ease;
-}*/
+
 .category-card:hover .category-img-wrapper {
   background: #ffffff;
 }
@@ -269,10 +261,10 @@ body.bg-white-page {
   left: 0;
   right: 0;
   text-align: center;
-  color: #f1f1f1 !important;
-  font-weight: 700;
-  letter-spacing: 2px;
-  font-size: 2rem;
+  color: #ffffff !important;
+  font-weight: 400;
+  letter-spacing: 5px;
+  font-size: 1.5rem;
   text-transform: uppercase;
 }
 
@@ -280,21 +272,63 @@ body.bg-white-page {
   object-position: 40% 50%; /*el 40% es para que se recorra la img de Urban a la izq y el 50 es de que se queda centrado por default, o sea arriba abajo*/
 }
 
-.category-img-wrapper img.fade-img {
-  opacity: 0;
-  transition: opacity 2s ease;
+@keyframes fadeInImg {
+  from {
+    opacity: 0;
+    filter: brightness(0.8) contrast(0.8) saturate(0.8);
+  }
+  to {
+    opacity: 1;
+    filter: brightness(0.95) contrast(0.95) saturate(0.95);
+  }
 }
 
-.category-img-wrapper img.fade-img.loaded {
-  opacity: 1;
+@keyframes fadeInName {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
+
+.category-img-wrapper img {
+  animation: fadeInImg 2s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+
 .category-name {
-  opacity: 0;
-  transition: opacity 0.6s ease;
+  animation: fadeInName 2s ease both;
 }
 
-.category-name.loaded {
-  opacity: 1;
+/* Stagger por card */
+.col-6:nth-child(1) .category-img-wrapper img,
+.col-6:nth-child(1) .category-name {
+  animation-delay: 0s;
+}
+
+.col-6:nth-child(2) .category-img-wrapper img,
+.col-6:nth-child(2) .category-name {
+  animation-delay: 0.15s;
+}
+
+.col-6:nth-child(3) .category-img-wrapper img,
+.col-6:nth-child(3) .category-name {
+  animation-delay: 0.3s;
+}
+
+.col-6:nth-child(4) .category-img-wrapper img,
+.col-6:nth-child(4) .category-name {
+  animation-delay: 0.45s;
+}
+
+.col-6:nth-child(5) .category-img-wrapper img,
+.col-6:nth-child(5) .category-name {
+  animation-delay: 0.6s;
+}
+
+.col-6:nth-child(6) .category-img-wrapper img,
+.col-6:nth-child(6) .category-name {
+  animation-delay: 0.75s;
 }
 
 /* ========================================
@@ -358,6 +392,11 @@ body.bg-white-page {
   /* Index Mobile */
   header:not(.visuals-header) {
     display: none;
+  }
+  /* Fix visuals navbar padding on mobile so logo + toggler stay in one row */
+  .visuals-header .navbar {
+    padding: 0 1.25rem;
+    flex-wrap: nowrap;
   }
 
   .hero-content {
@@ -445,14 +484,10 @@ body.bg-white-page {
 
   .category-name {
     position: absolute;
-    bottom: 1px;
     left: 0;
     right: 0;
-    text-align: center;
-    font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     font-size: 1.25rem;
-    text-transform: uppercase;
   }
   .site-footer p {
     font-size: 0.65rem;
