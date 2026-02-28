@@ -1,2 +1,5 @@
 
 ---  VISUALS... FOTO... TÍTULOS... QUITAR ZOOM, SOLO EFECTO OVERLAY
+git add .
+git commit -m "fix"
+git push

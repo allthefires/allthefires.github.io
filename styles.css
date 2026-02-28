@@ -164,10 +164,9 @@ header {
 }
 
 /* ========================================
-   --------        VISUALS  ---------------
+   VISUALS
 ======================================== */
 
-/* Header específico para Visuals */
 .visuals-header {
   background-color: #0a0a0a !important;
   border-bottom: 1px solid #1a1a1a;
@@ -221,6 +220,7 @@ body.visuals-page {
 .category-card {
   text-decoration: none;
   display: block;
+  pointer-events: auto;
 }
 
 .category-img-wrapper {
@@ -239,6 +239,7 @@ body.visuals-page {
   filter: brightness(0.75) contrast(0.95) saturate(0.9);
   transition: filter 1.5s cubic-bezier(0.19, 1, 0.22, 1);
   will-change: filter;
+  animation: fadeInImg 2s cubic-bezier(0.19, 1, 0.22, 1) both;
 }
 
 .category-card:hover img {
@@ -247,14 +248,16 @@ body.visuals-page {
 
 .category-name {
   position: absolute;
-  top: 5px;
-  left: 10px;
-  text-align:left;
-  color: #ffffff;
+  top: 1px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #c0c0c0;
   font-weight: 400;
-  letter-spacing: 4px;
-  font-size: 1.35rem;
+  letter-spacing: 5px;
+  font-size: 1.5rem;
   text-transform: uppercase;
+  animation: fadeInName 2s ease both;
 }
 
 .cold-img {
@@ -268,7 +271,7 @@ body.visuals-page {
   }
   to {
     opacity: 1;
-    filter: brightness(0.95) contrast(0.95) saturate(0.95);
+    filter: brightness(0.75) contrast(0.95) saturate(0.9);
   }
 }
 
@@ -279,14 +282,6 @@ body.visuals-page {
   to {
     opacity: 1;
   }
-}
-
-.category-img-wrapper img {
-  animation: fadeInImg 2s cubic-bezier(0.19, 1, 0.22, 1) both;
-}
-
-.category-name {
-  animation: fadeInName 2s ease both;
 }
 
 /* Stagger por card */
@@ -370,18 +365,13 @@ body.visuals-page {
 .mobile-logo {
   display: none;
 }
-/* Desktop Hover */
-@media (min-width: 992px) {
-  .category-card:hover .category-overlay {
-    opacity: 0;
-  }
-}
 
 @media (max-width: 991px) {
   /* Index Mobile */
   header:not(.visuals-header) {
     display: none;
   }
+
   /* Fix visuals navbar padding on mobile so logo + toggler stay in one row */
   .visuals-header .navbar {
     padding: 0 1.25rem;
@@ -391,7 +381,7 @@ body.visuals-page {
   .hero-content {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra título, subtítulo y links verticalmente */
+    justify-content: center;
     align-items: center;
     height: 100vh;
     padding-top: 0;
@@ -401,7 +391,7 @@ body.visuals-page {
   .hero-nav {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem; /* Reducido de 1.5rem a 0.8rem para que estén más juntos */
+    gap: 0.8rem;
     margin-top: 2rem;
   }
 
@@ -417,12 +407,12 @@ body.visuals-page {
   .mobile-logo {
     display: block;
     position: absolute;
-    top: 40px; /* Distancia desde el borde superior */
+    top: 40px;
     left: 50%;
     transform: translateX(-50%);
     font-weight: 600;
     letter-spacing: 4px;
-    margin-bottom: 0; /* El espacio lo da la posición absoluta */
+    margin-bottom: 0;
     white-space: nowrap;
   }
 
@@ -457,6 +447,7 @@ body.visuals-page {
     letter-spacing: 0.75em;
     margin-right: -0.6em;
   }
+
   .visuals-header-group {
     margin-bottom: 30px;
     text-align: center;
@@ -466,21 +457,21 @@ body.visuals-page {
     background: #0a0a0a;
     border: 1px solid #1a1a1a;
   }
-
-  .img-container{
-    padding-bottom: 100px;
+  .visuals-header .navbar-toggler {
+    border-color: rgba(192, 192, 192, 0.3) !important;
   }
 
-  .category-card {
-    text-decoration: none;
-    display: block;
+  .visuals-header .navbar-toggler-icon {
+    filter: invert(1) brightness(0.75);
   }
 
   .category-name {
-    position: absolute;
+    left: 0;
+    right: 0;
     letter-spacing: 3px;
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
+
   .site-footer p {
     font-size: 0.65rem;
     letter-spacing: 2px;
@@ -488,7 +479,9 @@ body.visuals-page {
   }
 }
 
-/* Image Protection & Reset */
+/* ========================================
+   IMAGE PROTECTION
+======================================== */
 img {
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -496,13 +489,4 @@ img {
   -o-user-select: none;
   user-select: none;
   pointer-events: none;
-}
-.category-card {
-  pointer-events: auto;
-}
-.visuals-header .navbar-toggler {
-  border-color: rgba(192, 192, 192, 0.3) !important;
-}
-  filter: invert(0);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28192, 192, 192, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
