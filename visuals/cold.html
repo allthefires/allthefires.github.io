@@ -23,7 +23,7 @@
 
     <style>
       /* ========================================
-         COLD GALLERY PAGE
+         COLD GALLERY PAGE - FINAL CLEAN VERSION
       ======================================== */
 
       body.cold-page {
@@ -87,7 +87,7 @@
         margin-top: 8px;
       }
 
-      /* Masonry grid */
+      /* --- GRID CONFIGURATION --- */
       .cold-grid {
         columns: 3;
         column-gap: 15px;
@@ -113,7 +113,6 @@
         overflow: hidden;
         background: #111;
         display: block;
-        cursor: zoom-in;
       }
 
       .cold-item-inner img {
@@ -121,9 +120,6 @@
         height: auto;
         display: block;
         object-fit: cover;
-        /*transition: transform 0.6s ease;*/
-        opacity: 1 !important;
-        transform: none !important;
       }
 
       .cold-caption {
@@ -148,7 +144,7 @@
         font-weight: 300;
       }
 
-      /* Back to top */
+      /* --- BACK TO TOP --- */
       .back-to-top {
         position: fixed;
         bottom: 30px;
@@ -181,20 +177,7 @@
         border-color: #444;
       }
 
-      .cold-item-inner {
-        cursor: zoom-in;
-        pointer-events: auto;
-      }
-
-      /* ========================================
-   LIGHTBOX DEFINITIVO
-   ======================================== */
-
-      /* Lupa en la galería principal */
-      .cold-item-inner {
-        cursor: zoom-in !important;
-      }
-
+      /* --- LIGHTBOX (Desktop) --- */
       .lightbox {
         position: fixed;
         inset: 0;
@@ -203,23 +186,11 @@
         display: none;
         align-items: center;
         justify-content: center;
-        cursor: zoom-out; /* Lupa de alejar en Desktop */
-
-        /* Esto activa el área de toque en móviles */
-        -webkit-tap-highlight-color: transparent;
+        cursor: zoom-out;
       }
 
       .lightbox.active {
         display: flex;
-      }
-
-      /* IMPORTANTE: Los hijos NO deben capturar el clic, 
-   para que el evento pase directo al fondo (.lightbox) */
-      .lightbox-content,
-      .lightbox-img,
-      .lightbox-close,
-      .lightbox-caption {
-        pointer-events: none;
       }
 
       .lightbox-content {
@@ -227,6 +198,7 @@
         flex-direction: column;
         align-items: center;
         width: 90%;
+        max-width: 1100px;
       }
 
       .lightbox-close {
@@ -245,19 +217,19 @@
         object-fit: contain;
       }
 
-      /* Responsive */
-      @media (max-width: 991px) {
+      /* --- RESPONSIVE / MOBILE --- */
+      @media (max-width: 768px) {
         .cold-container {
           padding: 100px 4% 80px 4%;
         }
 
         .cold-grid {
-          columns: 2;
-          column-gap: 8px;
+          columns: 1; /* Una columna en móvil */
+          column-gap: 0;
         }
 
         .cold-item {
-          margin-bottom: 8px;
+          margin-bottom: 24px;
         }
 
         .cold-title {
@@ -269,19 +241,20 @@
           margin-right: -0.6em;
         }
 
-        .cold-header-group {
-          margin-bottom: 36px;
+        /* Desactivamos lightbox visualmente en móvil */
+        .lightbox {
+          display: none !important;
+        }
+
+        .cold-item-inner {
+          cursor: default !important;
         }
       }
-      @media (min-width: 992px) {
-        .lightbox-close {
-          position: absolute;
-          top: -16px;
-          right: -16px;
-          left: auto;
-          transform: none;
-          font-size: 1.2rem;
-          letter-spacing: 0;
+
+      /* --- DESKTOP SPECIFIC --- */
+      @media (min-width: 769px) {
+        .cold-item-inner {
+          cursor: zoom-in !important;
         }
       }
     </style>

@@ -295,15 +295,18 @@ const coldObserver = new IntersectionObserver(
 coldItems.forEach((item) => coldObserver.observe(item));
 
 // ========================================
-// LIGHTBOX DEFINITIVO
+// LIGHTBOX (DESKTOP ONLY)
 // ========================================
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");
 const lightboxCaption = document.getElementById("lightboxCaption");
 
-// 1. FUNCIÓN PARA ABRIR
+// 1. FUNCIÓN PARA ABRIR (Solo Desktop)
 document.getElementById("coldGrid").addEventListener("click", (e) => {
+  // Fix: Si es móvil (menor o igual a 768px), no abrir lightbox
+  if (window.innerWidth <= 768) return;
+
   const item = e.target.closest(".cold-item");
   if (!item) return;
 
@@ -315,24 +318,21 @@ document.getElementById("coldGrid").addEventListener("click", (e) => {
   lightboxCaption.textContent = `${city} ${year}`;
 
   lightbox.classList.add("active");
-  document.body.style.overflow = "hidden"; // Bloquea scroll del fondo
+  document.body.style.overflow = "hidden";
 });
 
-// 2. FUNCIÓN ÚNICA PARA CERRAR
-const cerrarLightbox = (e) => {
-  // Solo cerramos si el lightbox está activo
+// 2. FUNCIÓN PARA CERRAR
+const cerrarLightbox = () => {
   if (lightbox.classList.contains("active")) {
     lightbox.classList.remove("active");
-    document.body.style.overflow = ""; // Devuelve el scroll
-    lightboxImg.src = ""; // Limpia la imagen para evitar "flashes"
+    document.body.style.overflow = "";
+    lightboxImg.src = "";
   }
 };
 
-// 3. EVENTOS DE CIERRE (Escucha clic y toque del dedo)
+// 3. EVENTOS DE CIERRE (Simplificado para Desktop)
 lightbox.addEventListener("click", cerrarLightbox);
-lightbox.addEventListener("touchstart", cerrarLightbox, { passive: true });
 
-// 4. CIERRE CON TECLA ESCAPE (Opcional, muy útil en Desktop)
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") cerrarLightbox();
 });
