@@ -289,6 +289,48 @@ if (coldGrid) {
 
   coldItems.forEach((item) => coldObserver.observe(item));
 }
+
+// Lightbox
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const lightboxCaption = document.getElementById("lightboxCaption");
+const lightboxClose = document.getElementById("lightboxClose");
+
+coldGrid.addEventListener("click", (e) => {
+  const item = e.target.closest(".cold-item");
+  if (!item) return;
+
+  const img = item.querySelector("img");
+  const city = item.querySelector(".cold-caption-city").textContent;
+  const year = item.querySelector(".cold-caption-year").textContent;
+
+  lightboxImg.src = img.src;
+  lightboxImg.alt = img.alt;
+  lightboxCaption.textContent = city && year ? `${city} ${year}` : city || year;
+  lightbox.classList.add("active");
+  document.body.style.overflow = "hidden";
+});
+
+lightboxClose.addEventListener("click", closeLightbox);
+
+lightboxImg.addEventListener("click", (e) => {
+  e.stopPropagation();
+  closeLightbox();
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeLightbox();
+});
+
+function closeLightbox() {
+  lightbox.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
 // ========================================
 // BACK TO TOP
 // ========================================
