@@ -296,7 +296,7 @@ const lightboxImg = document.getElementById("lightboxImg");
 const lightboxCaption = document.getElementById("lightboxCaption");
 const lightboxClose = document.getElementById("lightboxClose");
 
-coldGrid.addEventListener("click", (e) => {
+coldGrid.addEventListener("pointerdown", (e) => {
   const item = e.target.closest(".cold-item");
   if (!item) return;
 
