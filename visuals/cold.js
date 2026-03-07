@@ -2,6 +2,8 @@
 // COLD GALLERY
 // ========================================
 
+document.getElementById("current-year").textContent = new Date().getFullYear();
+
 const coldPhotos = [
   {
     file: "cold_pictures_web/varinia_cold_01.jpg",
@@ -255,48 +257,53 @@ const coldPhotos = [
   },
 ];
 
+// Shuffle
+coldPhotos.sort(() => Math.random() - 0.5);
+
+// Build grid
 const coldGrid = document.getElementById("coldGrid");
 
-if (coldGrid) {
-  coldPhotos.sort(() => Math.random() - 0.5);
-
-  coldPhotos.forEach((photo) => {
-    coldGrid.innerHTML += `
-      <div class="cold-item">
-        <div class="cold-item-inner">
-          <img src="${photo.file}" alt="${photo.city}" loading="eager" />
-        </div>
-        <div class="cold-caption">
-          <span class="cold-caption-city">${photo.city}</span>
-          <span class="cold-caption-year">${photo.year}</span>
-        </div>
+coldPhotos.forEach((photo) => {
+  coldGrid.innerHTML += `
+    <div class="cold-item">
+      <div class="cold-item-inner">
+        <img src="${photo.file}" alt="${photo.city}" loading="eager" />
       </div>
-    `;
-  });
+      <div class="cold-caption">
+        <span class="cold-caption-city">${photo.city}</span>
+        <span class="cold-caption-year">${photo.year}</span>
+      </div>
+    </div>
+  `;
+});
 
-  const coldItems = coldGrid.querySelectorAll(".cold-item");
-  const coldObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          coldObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.08, rootMargin: "0px 0px -40px 0px" },
-  );
+// Fade in on scroll
+const coldItems = coldGrid.querySelectorAll(".cold-item");
 
-  coldItems.forEach((item) => coldObserver.observe(item));
-}
+const coldObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        coldObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.08, rootMargin: "0px 0px -40px 0px" },
+);
 
-// Lightbox
+coldItems.forEach((item) => coldObserver.observe(item));
+
+// ========================================
+// LIGHTBOX DEFINITIVO
+// ========================================
+
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");
 const lightboxCaption = document.getElementById("lightboxCaption");
-const lightboxClose = document.getElementById("lightboxClose");
 
-coldGrid.addEventListener("pointerdown", (e) => {
+// Abrir: Usamos el contenedor que ya tienes (coldGrid)
+coldGrid.addEventListener("click", (e) => {
   const item = e.target.closest(".cold-item");
   if (!item) return;
 
@@ -305,31 +312,26 @@ coldGrid.addEventListener("pointerdown", (e) => {
   const year = item.querySelector(".cold-caption-year").textContent;
 
   lightboxImg.src = img.src;
-  lightboxImg.alt = img.alt;
-  lightboxCaption.textContent = city && year ? `${city} ${year}` : city || year;
+  lightboxCaption.textContent = `${city} ${year}`;
+
   lightbox.classList.add("active");
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow = "hidden"; // Bloquea scroll
 });
 
-lightboxClose.addEventListener("click", closeLightbox);
-
-lightboxImg.addEventListener("click", (e) => {
-  e.stopPropagation();
-  closeLightbox();
-});
-
-lightbox.addEventListener("click", (e) => {
-  if (e.target === lightbox) closeLightbox();
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeLightbox();
-});
-
-function closeLightbox() {
+// Cerrar: Un solo evento para TODO (Fondo, Foto y palabra CLOSE)
+lightbox.addEventListener("click", () => {
   lightbox.classList.remove("active");
-  document.body.style.overflow = "";
-}
+  document.body.style.overflow = ""; // Devuelve scroll
+  lightboxImg.src = ""; // Limpia la imagen
+});
+
+// Cerrar con Escape
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+});
 
 // ========================================
 // BACK TO TOP
@@ -337,20 +339,18 @@ function closeLightbox() {
 
 const backToTop = document.getElementById("backToTop");
 
-if (backToTop) {
-  window.addEventListener(
-    "scroll",
-    () => {
-      if (window.scrollY > 400) {
-        backToTop.classList.add("visible");
-      } else {
-        backToTop.classList.remove("visible");
-      }
-    },
-    { passive: true },
-  );
+window.addEventListener(
+  "scroll",
+  () => {
+    if (window.scrollY > 400) {
+      backToTop.classList.add("visible");
+    } else {
+      backToTop.classList.remove("visible");
+    }
+  },
+  { passive: true },
+);
 
-  backToTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
