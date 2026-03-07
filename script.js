@@ -205,5 +205,22 @@ window.addEventListener("scroll", function () {
 });
 
 /* ========================================
-   VISUALS HTML -- IMAGE FADE-IN ON LOAD
+   NAVBAR SCROLL EFFECT (Optional Enhancement)
 ======================================== */
+
+const imgs = [...document.querySelectorAll(".category-img-wrapper img")];
+
+const animateAll = () => imgs.forEach((img) => img.classList.add("visible"));
+
+Promise.all(
+  imgs.map(
+    (img) =>
+      new Promise((resolve) => {
+        if (img.complete) resolve();
+        else {
+          img.addEventListener("load", resolve, { once: true });
+          img.addEventListener("error", resolve, { once: true });
+        }
+      }),
+  ),
+).then(animateAll);
