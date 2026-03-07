@@ -198,17 +198,28 @@
       .lightbox {
         position: fixed;
         inset: 0;
-        background: rgba(0, 0, 0, 0.96); /* Fondo casi negro */
-        z-index: 9999; /* Por encima de todo */
-        display: none; /* Se activa con el JS */
+        background: rgba(0, 0, 0, 0.97);
+        z-index: 10000;
+        display: none;
         align-items: center;
         justify-content: center;
-        cursor: zoom-out; /* Lupa de alejar */
+        cursor: zoom-out; /* Lupa de alejar en Desktop */
+
+        /* Esto activa el área de toque en móviles */
+        -webkit-tap-highlight-color: transparent;
       }
 
-      /* Esta clase la pone el JS al hacer clic */
       .lightbox.active {
         display: flex;
+      }
+
+      /* IMPORTANTE: Los hijos NO deben capturar el clic, 
+   para que el evento pase directo al fondo (.lightbox) */
+      .lightbox-content,
+      .lightbox-img,
+      .lightbox-close,
+      .lightbox-caption {
+        pointer-events: none;
       }
 
       .lightbox-content {
@@ -216,34 +227,22 @@
         flex-direction: column;
         align-items: center;
         width: 90%;
-        max-width: 1000px;
       }
 
       .lightbox-close {
         color: #ffffff;
         font-family: "Roboto Flex", sans-serif;
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         letter-spacing: 5px;
-        padding: 20px;
-        cursor: pointer;
+        padding-bottom: 20px;
         text-transform: uppercase;
         font-weight: 300;
-        /* Asegura que siempre esté arriba de la foto */
       }
 
       .lightbox-img {
         max-width: 100%;
         max-height: 75vh;
         object-fit: contain;
-        box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
-      }
-
-      .lightbox-caption {
-        margin-top: 15px;
-        font-size: 0.65rem;
-        letter-spacing: 2px;
-        color: #666;
-        text-transform: uppercase;
       }
 
       /* Responsive */

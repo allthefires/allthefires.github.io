@@ -302,8 +302,8 @@ const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");
 const lightboxCaption = document.getElementById("lightboxCaption");
 
-// Abrir: Usamos el contenedor que ya tienes (coldGrid)
-coldGrid.addEventListener("click", (e) => {
+// 1. FUNCIÓN PARA ABRIR
+document.getElementById("coldGrid").addEventListener("click", (e) => {
   const item = e.target.closest(".cold-item");
   if (!item) return;
 
@@ -315,22 +315,26 @@ coldGrid.addEventListener("click", (e) => {
   lightboxCaption.textContent = `${city} ${year}`;
 
   lightbox.classList.add("active");
-  document.body.style.overflow = "hidden"; // Bloquea scroll
+  document.body.style.overflow = "hidden"; // Bloquea scroll del fondo
 });
 
-// Cerrar: Un solo evento para TODO (Fondo, Foto y palabra CLOSE)
-lightbox.addEventListener("click", () => {
-  lightbox.classList.remove("active");
-  document.body.style.overflow = ""; // Devuelve scroll
-  lightboxImg.src = ""; // Limpia la imagen
-});
-
-// Cerrar con Escape
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
+// 2. FUNCIÓN ÚNICA PARA CERRAR
+const cerrarLightbox = (e) => {
+  // Solo cerramos si el lightbox está activo
+  if (lightbox.classList.contains("active")) {
     lightbox.classList.remove("active");
-    document.body.style.overflow = "";
+    document.body.style.overflow = ""; // Devuelve el scroll
+    lightboxImg.src = ""; // Limpia la imagen para evitar "flashes"
   }
+};
+
+// 3. EVENTOS DE CIERRE (Escucha clic y toque del dedo)
+lightbox.addEventListener("click", cerrarLightbox);
+lightbox.addEventListener("touchstart", cerrarLightbox, { passive: true });
+
+// 4. CIERRE CON TECLA ESCAPE (Opcional, muy útil en Desktop)
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") cerrarLightbox();
 });
 
 // ========================================
