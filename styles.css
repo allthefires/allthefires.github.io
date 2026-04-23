@@ -227,7 +227,7 @@ body.visuals-page {
   position: relative;
   aspect-ratio: 4/5;
   overflow: hidden;
-  background: #0a0a0a;
+  display: block;
 }
 
 .category-img-wrapper img {
@@ -235,32 +235,29 @@ body.visuals-page {
   height: 100%;
   object-fit: cover;
   object-position: top;
-  /* Eliminamos opacity: 0 y transform */
-  opacity: 1;
-  transform: none;
-  /* Mantenemos una transición suave solo para el hover */
-  transition: filter 0.3s ease;
+  display: block;
 }
-.category-img-wrapper img.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.category-card:hover img {
-  filter: brightness(1) contrast(1.1) saturate(1.05);
-}
-
 .category-name {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  left: 0;
   right: 0;
-  text-align: left;
-  color: #ffffff;
-  font-weight: 400;
-  letter-spacing: 3px;
-  font-size: 1.25rem;
+  top: 10%;
+  transform: translateY(-50%);
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 1000;
+  font-variation-settings:
+    "wght" 1000,
+    "XTRA" 468; /* Máximo grosor de tu fuente */
+  font-size: 2.9rem;
+  color: rgba(0, 0, 0, 0.2); /* Negro al 50% de transparencia */
+  text-align: center;
   text-transform: uppercase;
-  animation: fadeInName 2s ease both;
+  max-width: 100%;
+  pointer-events: none;
+  z-index: 10;
+
+  /* Letras un poco más juntas para que se vea más "bloque" (opcional) */
+  letter-spacing: -1px;
 }
 
 @keyframes fadeInImg {
